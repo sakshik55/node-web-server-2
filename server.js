@@ -1,6 +1,8 @@
 var express=require('express');
 var hbs=require('hbs');
 
+const port= process.env.PORT || 3000;
+
  var a=express();
 a.set('view engine','hbs');
 hbs.registerPartials(__dirname+'/views/partial');
@@ -34,6 +36,6 @@ a.get('/bad',(req,res)=>{
   })
 });
 
-a.listen(3000, ()=>{
-  console.log('server is up');
+a.listen(port, ()=>{
+  console.log('server is up at'+port);
 });
